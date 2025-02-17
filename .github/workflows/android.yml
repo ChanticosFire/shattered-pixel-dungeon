@@ -3,10 +3,10 @@ name: Build Android APK
 on:
   push:
     branches:
-      - main  # 在 main 分支 push 触发构建
+      - master  # 在 master 分支 push 触发构建
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
