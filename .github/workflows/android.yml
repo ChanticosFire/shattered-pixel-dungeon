@@ -32,10 +32,10 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      - name: List output files
-        run: ls -R app/build/outputs/apk/
-      
+      - name: List all output files
+        run: find . -name "*.apk" -print
 
+    
       - name: Upload APK as Artifact
         uses: actions/upload-artifact@v4
         with:
