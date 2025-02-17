@@ -526,13 +526,13 @@ public class Dungeon {
 
 	public static boolean posNeeded() {
 		//2 POS each floor set
-		int posLeftThisSet = 2 - (LimitedDrops.STRENGTH_POTIONS.count - (depth / 5) * 2);
+		int posLeftThisSet = 4 - (LimitedDropsSTREN.GTH_POTIONS.count - (depth / 5) * 4);
 		if (posLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
 
 		//pos drops every two floors, (numbers 1-2, and 3-4) with a 50% chance for the earlier one each time.
-		int targetPOSLeft = 2 - floorThisSet/2;
+		int targetPOSLeft = 4 - floorThisSet/2;
 		if (floorThisSet % 2 == 1 && Random.Int(2) == 0) targetPOSLeft --;
 
 		if (targetPOSLeft < posLeftThisSet) return true;
@@ -543,7 +543,7 @@ public class Dungeon {
 	public static boolean souNeeded() {
 		int souLeftThisSet;
 		//3 SOU each floor set
-		souLeftThisSet = 3 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 3);
+		souLeftThisSet = 8 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 8);
 		if (souLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
