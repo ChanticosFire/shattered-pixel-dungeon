@@ -99,6 +99,12 @@ import java.util.TimeZone;
 
 public class Dungeon {
 
+	// Loot Boost: per ordinary dungeon floor (not bosses or quest branches).
+	// Vanilla guaranteed drops continue to use LimitedDrops independently.
+	public static final int BONUS_STRENGTH_POTIONS_PER_FLOOR = 3;
+	public static final int BONUS_UPGRADE_SCROLLS_PER_FLOOR = 3;
+	public static final int BONUS_RANDOM_ITEMS_PER_FLOOR = 6;
+
 	//enum of items which have limited spawns, records how many have spawned
 	//could all be their own separate numbers, but this allows iterating, much nicer for bundling/initializing.
 	public static enum LimitedDrops {
