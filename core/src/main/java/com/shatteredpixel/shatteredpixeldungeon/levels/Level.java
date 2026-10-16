@@ -239,6 +239,20 @@ public abstract class Level implements Bundlable {
 					addItemToSpawn(new ScrollOfUpgrade());
 				}
 			}
+
+			// Loot Boost: spawn these in addition to vanilla regional guaranteed drops.
+			// Do not increment LimitedDrops, otherwise vanilla quota logic is disrupted.
+			for (int i = 0; i < Dungeon.BONUS_STRENGTH_POTIONS_PER_FLOOR; i++) {
+				addItemToSpawn(new PotionOfStrength());
+			}
+			for (int i = 0; i < Dungeon.BONUS_UPGRADE_SCROLLS_PER_FLOOR; i++) {
+				// Forbidden Runes must still remove half of the bonus upgrade scrolls.
+				int scrollNumber = (Dungeon.depth - 1) * Dungeon.BONUS_UPGRADE_SCROLLS_PER_FLOOR + i;
+				if (!Dungeon.isChallenged(Challenges.NO_SCROLLS) || scrollNumber % 2 == 0) {
+					addItemToSpawn(new ScrollOfUpgrade());
+				}
+			}
+
 			if (Dungeon.asNeeded()) {
 				Dungeon.LimitedDrops.ARCANE_STYLI.count++;
 				addItemToSpawn( new Stylus() );
