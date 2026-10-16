@@ -378,6 +378,7 @@ public abstract class RegularLevel extends Level {
 		
 		// drops 3/4/5 items 60%/30%/10% of the time
 		int nItems = 3 + Random.chances(new float[]{6, 3, 1});
+		nItems += Dungeon.BONUS_RANDOM_ITEMS_PER_FLOOR;
 
 		if (feeling == Feeling.LARGE){
 			nItems += 2;
